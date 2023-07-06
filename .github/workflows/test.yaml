@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Install pre-req
         run: sudo apt-get install libdb++-dev
-
       - name: Build and Test
         run: |
           # Add your build and test commands here
