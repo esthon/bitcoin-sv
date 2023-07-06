@@ -16,5 +16,5 @@ jobs:
       - name: Build and Test
         run: |
           # Add your build and test commands here
-          # apt-get update && apt-get -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev; 
+          sudo apt-get update && sudo apt-get -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev; 
           cd /home/runner/work/bitcoin-sv/bitcoin-sv; git checkout mydev; ./autogen.sh; mkdir build; cd build; ../configure; make -j12 
