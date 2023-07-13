@@ -22,6 +22,4 @@ jobs:
           ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind /usr/local/bin/bitcoind; ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoin-cli /usr/local/bin/bitcoin-cli;
       - name: Functional tests
         run: |
-          pwd
-          #cd /actions-runner/_work/bitcoin-sv/bitcoin-sv/build && ./src/test/test_bitcoin
-          ./src/test/test_bitcoin
+          cd build && ./src/test/test_bitcoin
