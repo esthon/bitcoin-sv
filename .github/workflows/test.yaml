@@ -20,7 +20,7 @@ jobs:
           # sudo apt-get update && sudo apt-get -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev; 
           # cd /home/runner/work/bitcoin-sv/bitcoin-sv; git checkout mydev; ./autogen.sh; mkdir build; cd build; ../configure; make -j12
           #echo "not this time..."
-          cd /actions-runner/_work/bitcoin-sv/bitcoin-sv && git checkout mydev; ./autogen.sh; mkdir build; cd build; ../configure; make  -j4
+          cd /actions-runner/_work/bitcoin-sv/bitcoin-sv && git checkout mydev; ./autogen.sh; mkdir build; cd build; ../configure; make  -j24
       - name: linking bsv
         run: |
           ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind /usr/local/bin/bitcoind; ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoin-cli /usr/local/bin/bitcoin-cli;
