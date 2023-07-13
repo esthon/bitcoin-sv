@@ -20,6 +20,6 @@ jobs:
       - name: Linking bsv
         run: |
           ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind /usr/local/bin/bitcoind; ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoin-cli /usr/local/bin/bitcoin-cli;
-      - name: Functional tests
+      - name: Functional test
         run: |
           cd build && ./src/test/test_bitcoin
