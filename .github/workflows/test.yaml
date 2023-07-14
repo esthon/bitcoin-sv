@@ -7,8 +7,8 @@ on:
 
 jobs:
   build:
-    # runs-on: [self-hosted]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
+    # runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
       - name: Checkout code
@@ -17,7 +17,7 @@ jobs:
         run: sudo apt -y install sudo build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev
       - name: Build and Test
         run: |
-          ./autogen.sh; mkdir build; cd build; ../configure; make -j
+          ./autogen.sh; mkdir build; cd build; ../configure; make -j24
       #- name: Linking BSV
       #  run: |
       #    ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind /usr/local/bin/bitcoind; ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoin-cli /usr/local/bin/bitcoin-cli;
