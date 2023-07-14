@@ -19,7 +19,7 @@ bool  BlockDownloadTracker::MarkBlockAsInFlight(
     const auto [rangeBegin, rangeEnd] = mMapBlocksInFlight.equal_range(block.GetHash());
     for(auto itInFlight = rangeBegin; itInFlight != rangeEnd; ++itInFlight)
     {
-        if(itInFlight->second.block.GetNode() == block.GetNode())
+        if(itInFlight->second.block.GetNode() == block.Geode())
         {
             if(pit)
             {
