@@ -26,7 +26,7 @@ jobs:
       #    cd build && ./src/test/test_bitcoin
       - name: Install pre-req for functional test
         run: | 
-          sudo apt -y pip; 
+          sudo apt -y install pip; 
           pip install ecdsa
       - name: Functional test
         run: |
