@@ -27,7 +27,7 @@ jobs:
       - name: Install pre-req for functional test
         run: | 
           sudo apt -y install pip; 
-          pip install ecdsa
+          pip install ecdsa bip32utils
       - name: Functional test
         # run: |
         #  cd /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind/build

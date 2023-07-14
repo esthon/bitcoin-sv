@@ -22,11 +22,11 @@ jobs:
       #- name: Unit test
       #  run: |
       #    cd build && ./src/test/test_bitcoin
-      - name: Install pre-req for functional test
-        run: | 
-          sudo apt -y install pip; 
-          pip install ecdsa
-      - name: Functional test
+      #- name: Install pre-req for functional test
+      #  run: |
+      #    sudo apt -y install pip;
+      #    pip install ecdsa
+      #- name: Functional test
         # run: |
         #  cd /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind/build
-        run: cd build; ./test/functional/test_runner.py
+      #  run: cd build; ./test/functional/test_runner.py
