@@ -8,8 +8,8 @@
 
 #include <stdexcept>
 
-// Notification that a  block is now in flight
-bool  BlockDownloadTracker::MarkBlockAsInFlight(
+// Notification that a block is now in flight
+bool BlockDownloadTracker::MarkBlockAsInFlight(
     const Config& config, const BlockSource& block, const CNodeStatePtr& state,
     const CBlockIndex& pindex, std::list<QueuedBlock>::iterator** pit)
 {
@@ -19,7 +19,7 @@ bool  BlockDownloadTracker::MarkBlockAsInFlight(
     const auto [rangeBegin, rangeEnd] = mMapBlocksInFlight.equal_range(block.GetHash());
     for(auto itInFlight = rangeBegin; itInFlight != rangeEnd; ++itInFlight)
     {
-        if(itInFlight->second.block.GetNode() == block.Geode())
+        if(itInFlight->second.block.GetNode() == block.GetNode())
         {
             if(pit)
             {
