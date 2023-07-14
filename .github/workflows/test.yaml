@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: [self-hosted]
     #runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -31,4 +31,4 @@ jobs:
       - name: Functional test
         # run: |
         #  cd /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind/build
-        run: cd build; ./src/test/functional/test_runner.py
+        run: cd build; ./test/functional/test_runner.py
