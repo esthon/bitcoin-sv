@@ -21,9 +21,9 @@ jobs:
       #- name: Linking BSV
       #  run: |
       #    ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoind /usr/local/bin/bitcoind; ln -f -s /actions-runner/_work/bitcoin-sv/bitcoin-sv/build/src/bitcoin-cli /usr/local/bin/bitcoin-cli;
-      #- name: Unit test
-      #  run: |
-      #    cd build && ./src/test/test_bitcoin
+      - name: Unit test
+        run: |
+          cd build && ./src/test/test_bitcoin
       - name: Install pre-req for functional test
         run: | 
           sudo apt -y install pip; 
