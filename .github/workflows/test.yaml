@@ -6,7 +6,7 @@ on:
       - mydev
 
 jobs:
-  build-and-test:
+  build-and-unit-test:
     runs-on: [self-hosted]
     #runs-on: ubuntu-latest
     timeout-minutes: 200
@@ -27,6 +27,23 @@ jobs:
         run: |
           cd build; 
           ./src/test/test_bitcoin
+  build-and-functional-test:
+    runs-on: [self-hosted]
+    #runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install pre-req for build
+        run: >
+          sudo apt -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev
+      - name: Build
+        run: |
+          ./autogen.sh; 
+          mkdir build; 
+          cd build; 
+          ../configure --enable-debug; 
+          make -j24
       - name: Install pre-req for functional test
         run: | 
           sudo apt -y install pip; 
