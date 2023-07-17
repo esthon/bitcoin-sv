@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install pre-req for build
         run: >
-          sudo apt -y install sudo build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev
+          sudo apt -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev
       - name: Build
         run: |
           ./autogen.sh; 
