@@ -6,7 +6,7 @@ on:
       - mydev
 
 jobs:
-  build:
+  build-and-test:
     runs-on: [self-hosted]
     #runs-on: ubuntu-latest
     timeout-minutes: 240
