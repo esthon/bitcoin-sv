@@ -8,8 +8,8 @@ on:
 jobs:
   build-and-unit-test:
     # runs-on: [self-hosted]
-    # runs-on: ubuntu-latest
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    # runs-on: ubuntu-20.04
     timeout-minutes: 200
     steps:
       - name: Checkout code
@@ -30,8 +30,8 @@ jobs:
           ./src/test/test_bitcoin
   build-and-functional-test:
     # runs-on: [self-hosted]
-    # runs-on: ubuntu-latest
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    # runs-on: ubuntu-20.04
     timeout-minutes: 200
     steps:
       - name: Checkout code
