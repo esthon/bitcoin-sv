@@ -21,7 +21,7 @@ jobs:
           ./autogen.sh; 
           mkdir build; 
           cd build; 
-          ../configure; 
+          ../configure --enable-debug; 
           make -j24
       - name: Unit test
         run: |
@@ -34,4 +34,4 @@ jobs:
       - name: Functional test
         run: |
           cd build; 
-          ./test/functional/test_runner.py
+          ./test/functional/test_runner.py --timeout-factors=4
