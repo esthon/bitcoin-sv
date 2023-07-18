@@ -7,8 +7,8 @@ on:
 
 jobs:
   build-and-unit-test:
-    runs-on: [self-hosted]
-    # runs-on: ubuntu-latest
+    # runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     # runs-on: ubuntu-20.04
     timeout-minutes: 200
     steps:
