@@ -34,7 +34,7 @@ jobs:
     # runs-on: ubuntu-20.04
     timeout-minutes: 200
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Install pre-req for build
         run: >
