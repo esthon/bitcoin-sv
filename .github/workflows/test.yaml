@@ -3,10 +3,10 @@ name: WorkflowTest
 on:
   push:
     branches:
-      - !mydev
+      - '!mydev'
       - SVN-2434_unique_ptr_zero_len_array
       - SVN-2449_cmake_debug_enable
-      - "SVN-24**"
+      - 'SVN-24**'
   repository_dispatch:
     types: [run_branch]
 
