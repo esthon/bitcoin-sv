@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - mydev
+      - "SVN-24**"
 
 jobs:
   build-and-unit-test:
@@ -19,6 +20,8 @@ jobs:
           sudo apt -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev
       - name: Build
         run: |
+          echo "Checking the branch being worked..."
+          git status
           ./autogen.sh; 
           mkdir build; 
           cd build; 
