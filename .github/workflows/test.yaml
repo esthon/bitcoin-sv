@@ -3,8 +3,12 @@ name: WorkflowTest
 on:
   push:
     branches:
-      - mydev
+      - !mydev
+      - SVN-2434_unique_ptr_zero_len_array
+      - SVN-2449_cmake_debug_enable
       - "SVN-24**"
+  repository_dispatch:
+    types: [run_branch]
 
 jobs:
   build-and-unit-test:
@@ -15,13 +19,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Logging branch
+        run: |
+          echo "If running here through the external signal..."
+          echo "branch: ${{ github.event.client_payload.branch }}"
+          echo "Checking the branch being worked..."
+          git status
       - name: Install pre-req for build
         run: >
           sudo apt -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libdb-dev libdb++-dev
       - name: Build
         run: |
-          echo "Checking the branch being worked..."
-          git status
           ./autogen.sh; 
           mkdir build; 
           cd build; 
